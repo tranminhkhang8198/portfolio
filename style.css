@@ -62,7 +62,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999999;
+    z-index: 0;
     transition: left .5s ease;
 }
 
@@ -161,9 +161,11 @@ body {
     }
 }
 
-.skill .bars p, .skill .bars span {
+.skill .bars p,
+.skill .bars span {
     line-height: 10px;
 }
+
 /* #site-main */
 
 /* projects */
@@ -194,17 +196,18 @@ body {
     margin-bottom: 75px;
 }
 
-.timeline ul li > span {
+.timeline ul li>span {
     content: '';
     position: absolute;
     top: 0;
     left: -48px;
     width: 0px;
     height: 100%;
-    border: 1px solid #aaa;   
+    border: 1px solid #aaa;
 }
 
-.timeline ul li > span:before, .timeline ul li > span:after {
+.timeline ul li>span:before,
+.timeline ul li>span:after {
     content: '';
     width: 15px;
     height: 15px;
@@ -245,7 +248,21 @@ body {
 /* #projects */
 
 
+#footer form .row .col input[type="text"],
+#footer form .row .col input[type="email"],
+#footer form textarea {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid gray;
+    padding: 1.5rem 1rem;
+}
 
+
+@media screen and (min-width: 768px) {
+    .toggle-button {
+        display: none;
+    }
+}
 
 /* Change box-sizing from border-box to content-box */
 /*
@@ -261,5 +278,3 @@ body {
           box-sizing: content-box;
 }
 */
-
-
