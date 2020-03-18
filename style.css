@@ -43,6 +43,10 @@ body {
     font-size: 20px;
 }
 
+.font-size-18 {
+    font-size: 18px;
+}
+
 .font-size-16 {
     font-size: 16px;
 }
@@ -187,6 +191,7 @@ body {
 
 .timeline ul li {
     position: relative;
+    margin-bottom: 75px;
 }
 
 .timeline ul li > span {
@@ -225,11 +230,11 @@ body {
 
 .timeline ul li .time span:first-child {
     left: -130px;
-    top: -7px;
+    top: -10px;
 }
 
 .timeline ul li .time span:last-child {
-    top: 94%;
+    top: 98%;
 }
 
 
