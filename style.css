@@ -295,8 +295,7 @@ body {
   background: black;
 }
 
-.button:hover,
-.button:focus {
+.button:hover {
   background: transparent;
   text-decoration: none;
   color: black;
