@@ -19,12 +19,21 @@ $(document).ready(function (e) {
     }
   });
 
+  // stop video
+  function pauseAllVideos() {
+    $('iframe').contents().find('video').each(function () {
+      this.pause();
+    });
+    $('video').each(function () {
+      this.pause();
+    });
+  }
+
 
   // Gets the video src from the data-src on each button
   var $videoSrc;
   $('.video-btn').click(function () {
     $videoSrc = $(this).data("src");
-    console.log($videoSrc);
   });
 
   // when the modal is opened autoplay it  
@@ -34,14 +43,12 @@ $(document).ready(function (e) {
     $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
   })
 
-
-
   // stop playing the youtube video when I close the modal
   $('#myModal').on('hide.bs.modal', function (e) {
     // a poor man's stop video
-    $("#video").attr('src', $videoSrc);
-    $(".button").unbind("mouseenter mouseleave");
-  })
+    // $("#video").attr('src', $videoSrc);
+    pauseAllVideos();
+  });
 
 
   $toggle.click(function (e) {
