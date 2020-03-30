@@ -2,12 +2,18 @@ $(document).ready(function (e) {
   $win = $(window);
   $navbar = $("#header");
   $toggle = $(".toggle-button");
+
   $mouse = $("#mouse_icon");
+
   var width = $navbar.width();
 
   // resize event
   $win.resize(() => {
     toggle_onclick($win, $navbar, width);
+  });
+
+  $toggle.click(function (e) {
+    $navbar.toggleClass("toggle-left");
   });
 
   // scroll detect
@@ -28,7 +34,6 @@ $(document).ready(function (e) {
       this.pause();
     });
   }
-
 
   // Gets the video src from the data-src on each button
   var $videoSrc;
@@ -51,9 +56,6 @@ $(document).ready(function (e) {
   });
 
 
-  $toggle.click(function (e) {
-    $navbar.toggleClass("toggle-left");
-  });
 });
 
 function toggle_onclick($win, $navbar, width) {
