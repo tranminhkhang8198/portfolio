@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Oswald|Rambla|Staatliches&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Oswald|Rambla|Staatliches&display=swap"); */
 
 body {
   margin: 0;
@@ -132,10 +132,12 @@ body {
 /* site-main */
 
 .site-banner .banner-area {
-  background: url(./assets/Banner_image.jpg) no-repeat;
+  background: url(./assets/home_background2.jpeg) no-repeat;
   background-size: cover;
+  background-position: center center;
   width: 100%;
-  height: 100vh;
+  height: 120vh;
+  top: -178px;
   position: relative;
 }
 
