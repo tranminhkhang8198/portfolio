@@ -1,4 +1,13 @@
 $(document).ready(function (e) {
+  // responsive trigger
+  if (screen.width < 600) {
+    var times = document.querySelectorAll(".time");
+    times.forEach((el) => el.remove());
+
+    var lis = document.querySelectorAll(".timeline ul li");
+    lis.forEach((el) => el.classList.remove("mx-5"));
+  }
+
   $win = $(window);
   $navbar = $("#header");
   $toggle = $(".toggle-button");

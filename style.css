@@ -132,19 +132,19 @@ body {
 /* site-main */
 
 .site-banner .banner-area {
-  background: url(./assets/home_background2.jpeg) no-repeat;
+  background: url(./assets/home_background9.jpeg) no-repeat;
   background-size: cover;
   background-position: center center;
   width: 100%;
-  height: 120vh;
-  top: -178px;
+  height: 100vh;
+  /* top: -178px; */
   position: relative;
 }
 
 .site-banner .banner-area .author {
   margin: 0;
   position: absolute;
-  top: 45%;
+  top: 28%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -342,6 +342,16 @@ body {
 
   #header {
     z-index: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #home h1 {
+    font-size: 34px;
+  }
+
+  #home h5 {
+    font-size: 22px;
   }
 }
 /* #responsive */
