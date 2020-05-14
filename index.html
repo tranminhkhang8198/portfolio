@@ -10,8 +10,9 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./assets/fonts/font.css">
+    <!-- <link rel="stylesheet" href="./responsive.css"> -->
+    <link rel="stylesheet" href="./timeline.css">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./responsive.css">
 </head>
 
 <body>
@@ -34,10 +35,10 @@
                             href="#experience">Experience</a>
                         <a class="nav-item nav-link text-white-50 font-os font-size-16 active"
                             href="#projects_demo">Projects Demo</a>
-                        <a class="nav-item nav-link text-white-50 font-os font-size-16 active"
-                            href="#about_me">Portfolio</a>
                         <a class="nav-item nav-link text-white-50 font-os font-size-16 active" href="#footer">Contact
                             Me</a>
+                        <a class="nav-item nav-link text-white-50 font-os font-size-16 active"
+                            href="bang_diem/">Academic Transcript</a>
                     </div>
                 </nav>
             </div>
@@ -133,7 +134,7 @@
                                 </div>
                             </div>
                             <button class="button text-uppercase mr-3 float-right mb-1">Download CV</button>
-                            <a href="bang_diem/index.html" class="button text-uppercase mr-3 float-right">Academic Transcript</a>
+                            <a href="bang_diem/" class="button text-uppercase mr-3 float-right">Academic Transcript</a>
                         </div>
                     </div>
                 </section>
@@ -245,9 +246,30 @@
                                 </div>
                             </div>
 
+                            <div class="bar-2 mb-4">
+                                <div class="d-flex flex-row justify-content-between">
+                                    <p class="font-ram font-size-18">Bootstrap <span class="fab fa-bootstrap"></span></p>
+                                    <span class="font-ram font-size-16">70%</span>
+                                </div>
+                                <div class="progress" style="height: 3px;">
+                                    <div class="progress-bar bgcolor-black" role="progressbar" style="width:70%"></div>
+                                </div>
+                            </div>
+
                             <div class="bar-3 mb-4">
                                 <div class="d-flex flex-row justify-content-between">
                                     <p class="font-ram font-size-18">Javascript <span class="fab fa-js-square"></span>
+                                    </p>
+                                    <span class="font-ram font-size-16">80%</span>
+                                </div>
+                                <div class="progress" style="height: 3px;">
+                                    <div class="progress-bar bgcolor-black" role="progressbar" style="width:80%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="bar-3 mb-4">
+                                <div class="d-flex flex-row justify-content-between">
+                                    <p class="font-ram font-size-18">VueJS <span class="fab fa-vuejs"></span>
                                     </p>
                                     <span class="font-ram font-size-16">80%</span>
                                 </div>
@@ -298,267 +320,424 @@
                         <h5 class="text-uppercase font-os font-size-16 text-muted">exprience</h5>
                         <h1 class="text-uppercase font-staat font-size-34">Experience</h1>
                     </div>
-
-                    <div class="timeline">
-                        <ul>
-                            <li class="mx-5">
-                                <span></span>
-                                <div class="title py-2">
-                                    <p class="font-ram font-size-27">
-                                        Scientific Research: Applying Computer Vision to Smart Camera
-                                    </p>
+                      <ul class="timeline" v-for="(item, index) in data" :key="index">
+                        <li class="timeline-event">
+                          <label class="timeline-event-icon"></label>
+                          <div class="timeline-event-copy">
+                            <p class="timeline-event-thumbnail">April 2019 - December 2019</p>
+                            <h3 class="mb-4">Scientific Research: Applying Computer Vision to Smart Camera</h3>
+                            <!-- <h4>designer und autor</h4> -->
+                  
+                            <div class="description font-ram">
+                              <div class="font-size-20">
+                                <div class="row mb-3">
+                                  <div class="col-md-6">
+                                    <span class="fas fa-file-medical-alt"></span>
+                                    Description
+                                  </div>
+                                  <div class="col-md-6" v-if="show">
+                                    <span class="fas fa-users"></span>
+                                    Members:
+                                    <span class="text-black-50">5 people</span>
+                                  </div>
                                 </div>
-                                <div class="description font-ram">
-                                    <p class="font-size-20">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <span class="fas fa-file-medical-alt"></span>
-                                                Description
-                                            </div>
-                                            <div class="col-md-6">
-                                                <span class="fas fa-users"></span>
-                                                Members: <span class="text-black-50">5 people</span>
-                                            </div>
-                                        </div>
-                                    </p>
-                                    <p class="ml-3 text-black-50">Applying Computer Vision on Raspberry Pi for detecting
-                                        and tracking people.
-                                        <br> Keeping specific person always in the middle of the frame by rotating
-                                        camera with servos.
-                                    </p>
+                              </div>
+                              <div class="ml-3 text-black-50">
+                                <p class="m-0">Applying Computer Vision on Raspberry Pi for detecting and tracking people.</p>
+                                <p class="mt-0">Keeping specific person always in the middle of the video frame by rotating camera with servos.</p>
+                              </div>
+                            </div>
+                            <div class="technology">
+                              <div class="row">
+                                <div class="col-md-6 font-ram">
+                                  <div class="font-size-20">
+                                    <span class="fas fa-microchip"></span>
+                                    Technology
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Python
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Deep Neural Networks (DNN) module
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    OpenCV Library
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Dlib's face detector
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    GPIO.pi module for controlling and rotating servos
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    ImageZMQ for live video streaming from Raspberry Pi to server
+                                  </div>
                                 </div>
-                                <div class="technology">
-                                    <div class="row">
-                                        <div class="col-md-6 font-ram">
-                                            <p class="font-size-20">
-                                                <span class="fas fa-microchip"></span>
-                                                Technology
-                                            </p>
-                                            <p class="ml-3 mt-3 text-black-50">
-                                                <span class="fas fa-bolt"></span>
-                                                OpenCV Library
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Deep Neural Networks (DNN) module
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Dlib's face detector
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                GPIO.pi module for controling and rotating servos
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                ImageZMQ for live video streaming from Raspberry Pi to server
-                                            </p>
-                                        </div>
-                                        <div class="col-md-6 font-ram">
-                                            <p class="font-size-20">
-                                                <span class="fas fa-user-shield"></span>
-                                                Responsibility
-                                            </p>
+                                <div class="col-md-6 font-ram" id="responsiblilty">
+                                  <div class="font-size-20">
+                                    <span class="fas fa-user-shield"></span>
+                                    Responsibility
+                                  </div>
+                  
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Setting up Raspberry Pi
+                                  </div>
 
-                                            <p class="ml-3 text-black-50">
-                                                <span class="fas fa-bolt"></span>
-                                                Setting up Raspberry Pi
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Design and assemble model for connecting Raspberry Pi, camera and servos
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Creating module for detecting and tracking
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Creating module for controlling and rotating servos
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
 
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Design and assemble model for connecting Raspberry Pi, <br>
-                                                <span class="ml-3">camera and servos</span>
-
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Creating module for detecting and tracking
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Creating module for controlling and rotating servos
-                                                <br>
-                                            </p>
-
-                                        </div>
+                        <!-- ///////////////////////////////////////////////////////////////////////////// -->
+                        <li class="timeline-event">
+                            <label class="timeline-event-icon"></label>
+                            <div class="timeline-event-copy">
+                              <p class="timeline-event-thumbnail">September 2019 - December 2019</p>
+                              <h3 class="mb-4">Image Captioning</h3>
+                              <!-- <h4>designer und autor</h4> -->
+                    
+                              <div class="description font-ram">
+                                <div class="font-size-20">
+                                  <div class="row mb-3">
+                                    <div class="col-md-6">
+                                      <span class="fas fa-file-medical-alt"></span>
+                                      Description
                                     </div>
-                                </div>
-                                <div class="time font-ram">
-                                    <span>04/2019</span>
-                                    <span>12/2019</span>
-                                </div>
-                            </li>
-
-
-                            <li class="mx-5">
-                                <span></span>
-                                <div class="title py-2">
-                                    <p class="font-ram font-size-27">
-                                        Freelance: Sport Live Streaming Web Application
-                                    </p>
-                                </div>
-                                <div class="description font-ram">
-                                    <p class="font-size-20">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <span class="fas fa-file-medical-alt"></span>
-                                                Description
-                                            </div>
-                                            <div class="col-md-6">
-                                                <span class="fas fa-users"></span>
-                                                Members: <span class="text-black-50">3 people</span>
-                                            </div>
-                                        </div>
-                                    </p>
-                                    <p class="ml-3 text-black-50">
-                                        Developing sport live streaming web application using HTTP Live Streaming FFMPEG
-                                    </p>
-                                </div>
-                                <div class="technology">
-                                    <div class="row">
-                                        <div class="col-md-6 font-ram">
-                                            <p class="font-size-20">
-                                                <span class="fas fa-microchip"></span>
-                                                Technology
-                                            </p>
-                                            <p class="ml-3 mt-3 text-black-50">
-                                                <span class="fas fa-bolt"></span>
-                                                NGINX - RTMP module
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                FFMPEG
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                MVC model
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                HTML, CSS, SASS
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Bootstrap 4
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Javascript, AJAX, Parcel
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                NodeJS, ExpressJS
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                MongoDB & Mongoose
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                PUG View Engine
-                                            </p>
-                                        </div>
-                                        <div class="col-md-6 font-ram">
-                                            <p class="font-size-20">
-                                                <span class="fas fa-user-shield"></span>
-                                                Responsibility
-                                            </p>
-
-                                            <p class="ml-3 text-black-50">
-                                                <span class="fas fa-bolt"></span>
-                                                Databse analysis
-
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Database design
-
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Backend Developer
-
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Rendering some pages by using PUG View Engine
-                                                <br>
-                                            </p>
-
-                                        </div>
+                                    <div class="col-md-6" v-if="show">
+                                      <span class="fas fa-users"></span>
+                                      Members:
+                                      <span class="text-black-50">5 people</span>
                                     </div>
+                                  </div>
                                 </div>
-                                <div class="time font-ram">
-                                    <span>09/2019</span>
-                                    <span>11/2019</span>
+                                <div class="ml-3 text-black-50">
+                                  <p class="m-0">Building model for predict caption for image with Vietnamese caption.</p>
+                                  <p class="mt-0 mb-0">Setting up image captioning model on server to predict caption for image from Raspberry Pi Camera.</p>
+                                  <p class="mt-0">Sending caption back from server to Raspberry Pi in order to speak out loud by speaker.</p>
                                 </div>
-                            </li>
-
-
-                            <li class="mx-5">
-                                <span></span>
-                                <div class="title py-2">
-                                    <p class="font-ram font-size-27">
-                                        Agricutural Cooperatives 4.0
-                                    </p>
-                                </div>
-                                <div class="description font-ram">
-                                    <p class="font-size-20">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <span class="fas fa-file-medical-alt"></span>
-                                                Description
-                                            </div>
-                                            <div class="col-md-6">
-                                                <span class="fas fa-users"></span>
-                                                Members: <span class="text-black-50">9 people</span>
-                                            </div>
-                                        </div>
-                                    </p>
-                                    <p class="ml-3 text-black-50">
-                                        Developing a system for agricutural production managing and diary logging.
-                                        <br>Web application for managing all facilies like plant production product,
-                                        fertilizer, medical instrument,...
-                                        <br>Mobile application for logging all production diary of farmers.
-                                    </p>
-                                </div>
-                                <div class="technology">
-                                    <div class="row">
-                                        <div class="col-md-6 font-ram">
-                                            <p class="font-size-20">
-                                                <span class="fas fa-microchip"></span>
-                                                Technology
-                                            </p>
-                                            <p class="ml-3 mt-3 text-black-50">
-                                                <span class="fas fa-bolt"></span>
-                                                NodeJS
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                ExpressJS
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                ReactJS
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Bootstrap 4
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                MongoDB
-                                            </p>
-                                        </div>
-                                        <div class="col-md-6 font-ram">
-                                            <p class="font-size-20">
-                                                <span class="fas fa-user-shield"></span>
-                                                Responsibility
-                                            </p>
-
-                                            <p class="ml-3 text-black-50">
-                                                <span class="fas fa-bolt"></span>
-                                                Database analysis
-
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Database design
-
-                                                <br>
-                                                <span class="fas fa-bolt"></span>
-                                                Backend develop
-                                            </p>
-
-                                        </div>
+                              </div>
+                              <div class="technology">
+                                <div class="row">
+                                  <div class="col-md-6 font-ram">
+                                    <div class="font-size-20">
+                                      <span class="fas fa-microchip"></span>
+                                      Technology
                                     </div>
+                                    <div
+                                      class="ml-3 mt-3 text-black-50"
+                                    >
+                                      <span class="fas fa-bolt"></span>
+                                      Python
+                                    </div>
+                                    <div
+                                      class="ml-3 mt-3 text-black-50"
+                                    >
+                                      <span class="fas fa-bolt"></span>
+                                      Convolutional neural network (CNN)
+                                    </div>
+                                    <div
+                                      class="ml-3 mt-3 text-black-50"
+                                    >
+                                      <span class="fas fa-bolt"></span>
+                                      Recurrent neural network (RNN)
+                                    </div>
+                                    <div
+                                      class="ml-3 mt-3 text-black-50"
+                                    >
+                                      <span class="fas fa-bolt"></span>
+                                      Word Embedding
+                                    </div>
+                                    <div
+                                      class="ml-3 mt-3 text-black-50"
+                                    >
+                                      <span class="fas fa-bolt"></span>
+                                      ImageZMQ for sending image from Raspberry Pi Camera to server
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6 font-ram" id="responsiblilty">
+                                    <div class="font-size-20">
+                                      <span class="fas fa-user-shield"></span>
+                                      Responsibility
+                                    </div>
+                    
+                                    <div
+                                      class="ml-3 mt-3 text-black-50"
+                                    >
+                                      <span class="fas fa-bolt"></span>
+                                      Gathering and pre-processing dataset
+                                    </div>
+  
+                                    <div
+                                      class="ml-3 mt-3 text-black-50"
+                                    >
+                                      <span class="fas fa-bolt"></span>
+                                      Training model for predict caption
+                                    </div>
+                                    <div
+                                      class="ml-3 mt-3 text-black-50"
+                                    >
+                                      <span class="fas fa-bolt"></span>
+                                      Setting up environment for connection between server and Raspberry Pi.
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="time font-ram">
-                                    <span>11/2019</span>
-                                    <span>Current</span>
+                              </div>
+                            </div>
+                          </li>
+
+                        <li class="timeline-event">
+                          <label class="timeline-event-icon"></label>
+                          <div class="timeline-event-copy">
+                            <p class="timeline-event-thumbnail">September 2019 - November 2019</p>
+                            <h3 class="mb-4">Freelance: Sport Live Streaming Web Application</h3>
+                            <!-- <h4>designer und autor</h4> -->
+                  
+                            <div class="description font-ram">
+                              <div class="font-size-20">
+                                <div class="row mb-3">
+                                  <div class="col-md-6">
+                                    <span class="fas fa-file-medical-alt"></span>
+                                    Description
+                                  </div>
+                                  <div class="col-md-6" v-if="show">
+                                    <span class="fas fa-users"></span>
+                                    Members:
+                                    <span class="text-black-50">3 people</span>
+                                  </div>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
+                              </div>
+                              <div class="ml-3 text-black-50">
+                                <p class="m-0">Developing sport live streaming web application using HTTP Live Streaming FFMPEG</p>
+                              </div>
+                            </div>
+                            <div class="technology">
+                              <div class="row">
+                                <div class="col-md-6 font-ram">
+                                  <div class="font-size-20">
+                                    <span class="fas fa-microchip"></span>
+                                    Technology
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    NGINX - RTMP module
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                  <span class="fas fa-bolt"></span> 
+                                  FFMPEG</div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                  <span class="fas fa-bolt"></span> 
+                                  MVC Model</div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                  <span class="fas fa-bolt"></span>
+                                  HTML, CSS, SASS</div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                  <span class="fas fa-bolt"></span>Bootstrap 4
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                  <span class="fas fa-bolt"></span>
+                                  Javascript, AJAX
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                  <span class="fas fa-bolt"></span>
+                                  NodeJS, ExpressJS
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                  <span class="fas fa-bolt"></span>
+                                  MongoDB & Mongoose
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                  <span class="fas fa-bolt"></span>
+                                  Pug View Engine
+                                  </div>
+                                </div>
+                                <div class="col-md-6 font-ram" id="responsiblilty">
+                                  <div class="font-size-20">
+                                    <span class="fas fa-user-shield"></span>
+                                    Responsibility
+                                  </div>
+                  
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Database analysis
+                                  </div>
+
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Database design
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Backend Developer
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+
+                        <!-- ///////////////////////////////////////////////////////////////////////////// -->
+
+                        <li class="timeline-event">
+                          <label class="timeline-event-icon"></label>
+                          <div class="timeline-event-copy">
+                            <p class="timeline-event-thumbnail">December 2019 - Current</p>
+                            <h3 class="mb-4">Agricutural Cooperatives 4.0</h3>
+                            <!-- <h4>designer und autor</h4> -->
+                  
+                            <div class="description font-ram">
+                              <div class="font-size-20">
+                                <div class="row mb-3">
+                                  <div class="col-md-6">
+                                    <span class="fas fa-file-medical-alt"></span>
+                                    Description
+                                  </div>
+                                  <div class="col-md-6" v-if="show">
+                                    <span class="fas fa-users"></span>
+                                    Members:
+                                    <span class="text-black-50">8 people</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="ml-3 text-black-50">
+                                <p class="m-0">Developing a system for agricutural production managing and diary logging.</p>
+                                <p class="mt-0 mb-0">Web application for managing all facilies like plant production product, fertilizer, medical instrument,...</p>
+                                <p class="mt-0">Mobile application for logging all production diary of farmers.</p>
+                              </div>
+                            </div>
+                            <div class="technology">
+                              <div class="row">
+                                <div class="col-md-6 font-ram">
+                                  <div class="font-size-20">
+                                    <span class="fas fa-microchip"></span>
+                                    Technology
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    NodeJS
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    ExpressJS
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    ReactJS
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Bootstrap 4
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    MongoDB
+                                  </div>
+                                </div>
+                                <div class="col-md-6 font-ram" id="responsiblilty">
+                                  <div class="font-size-20">
+                                    <span class="fas fa-user-shield"></span>
+                                    Responsibility
+                                  </div>
+                  
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Database analysis
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Database design
+                                  </div>
+                                  <div
+                                    class="ml-3 mt-3 text-black-50"
+                                  >
+                                    <span class="fas fa-bolt"></span>
+                                    Backend develop
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+
+                        
+                      </ul>
                 </section>
                 <!--#projects-->
 
@@ -578,31 +757,6 @@
                                     <div class="middle">
                                         <a href="#demo_research" class="button more video-btn" data-toggle="modal"
                                             data-src="https://www.youtube.com/embed/5yhcqrR-CDs" data-target="#myModal">
-                                            Demo <i class="fa fa-play-circle" aria-hidden="true">&nbsp;</i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <p class="font-ram font-size-16 text-black-50">in
-                                        <b class="text-uppercase text-dark">April - December 2019</b>
-                                    </p>
-                                    <h5 class="card-title font-ram">Scientific Research</h5>
-                                    <p class="card-text text-black-50">
-                                        Applying Computer Vision on Raspberry Pi for automatic camera
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 my-3">
-                            <div class="card border-0">
-                                <div class="overlay">
-                                    <img src="./assets/projects/research/thumbnail.png" alt="news1"
-                                        class="image card-img-top">
-                                    <div class="middle">
-                                        <a href="#demo_research" class="button more video-btn" data-toggle="modal"
-                                            data-src="https://www.youtube.com/watch?v=KxtT6u4f9Hs"
-                                            data-target="#myModal">
                                             Demo <i class="fa fa-play-circle" aria-hidden="true">&nbsp;</i>
                                         </a>
                                     </div>
@@ -651,7 +805,7 @@
 
 
                         <div class="row py-5">
-                            <div class="col-md-6">
+                            <div class="col-md-6 pl-4">
                                 <p class="font-ram font-size-18 text-black-50 mb-5">
                                     Please contact me if I meet most of your
                                     company requirements. I hope I will be a part of your company in the furture.
@@ -673,8 +827,8 @@
                                     ADDRESS: Can Tho, Viet Nam
                                 </p>
                             </div>
-                            <div class="col-md-6 py-4 px-4">
-                                <h6 class="text-uppercase font-ram font-size-16">Get in touch</h6>
+                            <div class="col-md-6 px-4">
+                                <h6 class="text-uppercase font-ram font-size-20">Get in touch</h6>
                                 <form action="" class="py-3">
                                     <div class="row">
                                         <div class="col">
@@ -731,6 +885,13 @@
     <script src="./vendor/typed/typed.min.js"></script>
 
     <script src="./index.js"></script>
+
+    <script type="text/javascript" src="data.json">
+        var myData = JSON.parse(data);
+
+        console.log(myData);
+    </script>
+
 </body>
 
 </html>
